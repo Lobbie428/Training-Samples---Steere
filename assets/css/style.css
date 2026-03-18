@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #1a1a1a;
-    --text-color: #e0e0e0;
-    --primary-color: #00aaff;
-    --card-bg-color: #2c2c2c;
-    --border-color: #444;
+    --bg-color: #FFFFFF;
+    --text-color: #212529;
+    --primary-color: #0d6efd;
+    --border-color: #dee2e6;
+    --card-bg-color: #FFFFFF;
 }
 
 body {
@@ -12,24 +12,32 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 header {
     text-align: center;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
-    margin-bottom: 40px;
+    padding: 40px 20px;
+    margin-bottom: 50px;
+    background-color: #f8f9fa;
 }
 
 header h1 {
-    color: var(--primary-color);
-    margin-bottom: 0;
+    color: #343a40;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #6c757d;
 }
 
 main {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .training-item {
@@ -38,27 +46,37 @@ main {
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .training-item h2 {
     color: var(--primary-color);
     margin-top: 0;
+    font-size: 1.75rem;
 }
 
 .description {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #495057;
 }
 
 video {
-    border-radius: 4px;
+    border-radius: 6px;
     max-width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+.documents {
+    margin-top: 30px;
 }
 
 .documents h3 {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #343a40;
 }
 
 .documents ul {
@@ -66,28 +84,34 @@ video {
     padding: 0;
 }
 
+.documents li {
+    margin-bottom: 10px;
+}
+
 .documents a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: text-decoration 0.2s ease;
 }
 
 .documents a:hover {
-    color: #fff;
+    text-decoration: underline;
 }
 
 footer {
     text-align: center;
-    margin-top: 60px;
-    padding-top: 20px;
+    margin-top: 80px;
+    padding: 30px;
     border-top: 1px solid var(--border-color);
-    color: #888;
+    color: #6c757d;
+    background-color: #f8f9fa;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
+    header h1 {
+        font-size: 2rem;
     }
     .training-item {
         padding: 20px;
