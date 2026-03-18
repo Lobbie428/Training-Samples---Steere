@@ -4,7 +4,8 @@
     --primary-color: #0d6efd; /* A standard, clean blue */
     --secondary-text-color: #6c757d; /* A muted grey for sub-text */
     --border-color: #dee2e6; /* A light grey for borders */
-    --card-bg-color: #ffffff; /* No card background, but keeping for structure */
+    --card-bg-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.05);
 }
 
 body {
@@ -14,6 +15,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -24,7 +26,8 @@ header {
 }
 
 header h1 {
-    color: var(--text-color); /* Main headers are black for minimalism */
+    /* Color is now handled by JS, but we set a fallback */
+    color: var(--text-color);
     margin-bottom: 10px;
     font-size: 2.5rem;
 }
@@ -45,8 +48,8 @@ main {
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 30px;
-    /* Remove the dark theme shadow, use a very subtle one */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .training-item h2 {
@@ -86,7 +89,7 @@ video {
 }
 
 .documents a:hover {
-    color: #0a58ca; /* A darker blue for hover */
+    color: #0a58ca;
 }
 
 footer {
@@ -107,5 +110,26 @@ footer {
     }
     header h1 {
         font-size: 2rem;
+    }
+}
+
+/* Automatic Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --secondary-text-color: #888;
+        --border-color: #444;
+        --card-bg-color: #2c2c2c;
+        --shadow-color: rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+        /* In dark mode, we need to override the JS inline styles for non-colored letters */
+        color: var(--text-color) !important;
+    }
+
+    .documents a:hover {
+        color: #fff;
     }
 }
