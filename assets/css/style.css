@@ -6,6 +6,8 @@
     --border-color: #dee2e6; /* A light grey for borders */
     --card-bg-color: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.05);
+    --link-color: #b08f00; /* Darker, golden yellow for light mode */
+    --link-hover-color: #7c6500;
 }
 
 body {
@@ -82,14 +84,14 @@ video {
 }
 
 .documents a {
-    color: var(--primary-color);
+    color: var(--link-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .documents a:hover {
-    color: #0a58ca;
+    color: var(--link-hover-color);
 }
 
 footer {
@@ -122,14 +124,12 @@ footer {
         --border-color: #444;
         --card-bg-color: #2c2c2c;
         --shadow-color: rgba(0, 0, 0, 0.2);
+        --link-color: #F4B400; /* Brighter yellow for dark mode */
+        --link-hover-color: #fff;
     }
 
     header h1 {
         /* In dark mode, we need to override the JS inline styles for non-colored letters */
         color: var(--text-color) !important;
-    }
-
-    .documents a:hover {
-        color: #fff;
     }
 }
