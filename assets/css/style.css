@@ -1,9 +1,11 @@
 :root {
-    --bg-color: #1a1a1a;
-    --text-color: #e0e0e0;
-    --primary-color: #00aaff;
-    --card-bg-color: #2c2c2c;
-    --border-color: #444;
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --primary-color: #0d6efd; /* A standard, clean blue */
+    --secondary-text-color: #6c757d; /* A muted grey for sub-text */
+    --border-color: #dee2e6; /* A light grey for borders */
+    --card-bg-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.05);
 }
 
 body {
@@ -12,23 +14,31 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
     text-align: center;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 header h1 {
-    color: var(--primary-color);
-    margin-bottom: 0;
+    /* Color is now handled by JS, but we set a fallback */
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+header p {
+    color: var(--secondary-text-color);
+    font-size: 1.1rem;
 }
 
 main {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -37,28 +47,33 @@ main {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .training-item h2 {
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-top: 0;
+    font-size: 1.75rem;
 }
 
 .description {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    color: var(--secondary-text-color);
 }
 
 video {
     border-radius: 4px;
     max-width: 100%;
+    border: 1px solid var(--border-color);
 }
 
 .documents h3 {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 .documents ul {
@@ -69,11 +84,12 @@ video {
 .documents a {
     color: var(--primary-color);
     text-decoration: none;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .documents a:hover {
-    color: #fff;
+    color: #0a58ca;
 }
 
 footer {
@@ -81,15 +97,39 @@ footer {
     margin-top: 60px;
     padding-top: 20px;
     border-top: 1px solid var(--border-color);
-    color: #888;
+    color: var(--secondary-text-color);
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
     body {
-        padding: 10px;
+        padding: 20px;
     }
     .training-item {
         padding: 20px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Automatic Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --secondary-text-color: #888;
+        --border-color: #444;
+        --card-bg-color: #2c2c2c;
+        --shadow-color: rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+        /* In dark mode, we need to override the JS inline styles for non-colored letters */
+        color: var(--text-color) !important;
+    }
+
+    .documents a:hover {
+        color: #fff;
     }
 }

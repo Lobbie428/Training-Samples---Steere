@@ -119,5 +119,27 @@
         <p>&copy; 2026 Pete. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const title = document.querySelector('header h1');
+            if (title) {
+                const text = title.innerText;
+                const colors = ['#4285F4', '#DB4437', '#F4B400', '#4285F4', '#0F9D58', '#DB4437'];
+                let colorIndex = 0;
+                
+                const html = text.split('').map(char => {
+                    if (char === ' ') {
+                        return ' ';
+                    }
+                    const color = colors[colorIndex % colors.length];
+                    colorIndex++;
+                    return `<span style="color: ${color};">${char}</span>`;
+                }).join('');
+                
+                title.innerHTML = html;
+            }
+        });
+    </script>
+
 </body>
 </html>
