@@ -1,13 +1,14 @@
 :root {
-    --bg-color: #121212; /* Very dark grey, almost black */
+    --bg-color: #e7e7e7; /* Very dark grey, almost black */
     --text-color: #EAEAEA; /* Off-white for easier reading */
-    --primary-color: #007BFF; /* A vibrant, professional blue */
-    --secondary-text-color: #A0A0A0; /* Lighter grey for secondary text */
-    --border-color: #333333; /* Darker, more subtle borders */
-    --card-bg-color: #1E1E1E; /* A slightly lighter dark grey for cards */
+    --primary-color: #aabee1; /* A vibrant, professional blue */
+    --Dprimary-color: #1e5ecc; /* A deeper more vibrant, professional blue */
+    --secondary-text-color: #aeaeae; /* Lighter grey for secondary text */
+    --border-color: #7e8fd4; /* Darker, more subtle borders */
+    --card-bg-color: #45596f; /* A slightly lighter dark grey for cards */
     --shadow-color: rgba(0, 0, 0, 0.4);
-    --link-color: #007BFF; /* Links will use the primary blue */
-    --link-hover-color: #4DA3FF; /* A lighter blue for hover */
+    --link-color: #ffc800; /* Links will use the primary blue */
+    --link-hover-color: #edf0f3; /* A lighter blue for hover */
 }
 
 body {
@@ -29,24 +30,25 @@ header {
 }
 
 header h1 {
-    color: var(--text-color);
+    color: var(--Dprimary-color);
     margin-bottom: 15px;
+    margin: 0;
     font-size: 3rem;
     font-weight: 700;
 }
 
 header p {
-    color: var(--secondary-text-color);
+    color: var(--Dprimary-color);
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto;
 }
 
 main {
-    max-width: 1400px; /* Wider layout */
+    max-width: 1800px; /* Wider layout */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 40px;
 }
 
@@ -73,7 +75,7 @@ main {
 
 .description {
     margin-bottom: 30px;
-    color: var(--secondary-text-color);
+    color: var(--text-color);
     font-size: 1rem;
 }
 
@@ -86,7 +88,7 @@ main {
 }
 
 .description a:hover {
-    border-bottom-color: var(--link-hover-color);
+    color: var(--link-hover-color);
 }
 
 video {
@@ -128,7 +130,7 @@ footer {
     margin-top: 80px;
     padding: 30px 0;
     border-top: 1px solid var(--border-color);
-    color: var(--secondary-text-color);
+    color: var(--text-color);
 }
 
 /* Responsive Design */
