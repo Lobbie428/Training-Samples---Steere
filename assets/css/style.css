@@ -1,13 +1,13 @@
 :root {
-    --bg-color: #121212; /* Very dark grey, almost black */
-    --text-color: #EAEAEA; /* Off-white for easier reading */
-    --primary-color: #007BFF; /* A vibrant, professional blue */
-    --secondary-text-color: #A0A0A0; /* Lighter grey for secondary text */
-    --border-color: #333333; /* Darker, more subtle borders */
-    --card-bg-color: #1E1E1E; /* A slightly lighter dark grey for cards */
-    --shadow-color: rgba(0, 0, 0, 0.4);
-    --link-color: #007BFF; /* Links will use the primary blue */
-    --link-hover-color: #4DA3FF; /* A lighter blue for hover */
+    --bg-color: #F8F9FA; /* A professional, clean off-white */
+    --text-color: #212529; /* Standard dark grey for text */
+    --primary-color: #007BFF; /* The vibrant blue for accents */
+    --secondary-text-color: #6c757d; /* Muted grey for sub-text */
+    --border-color: #DEE2E6; /* Light grey for borders */
+    --card-bg-color: #FFFFFF; /* Pure white for cards to make them pop */
+    --shadow-color: rgba(0, 0, 0, 0.05); /* A very subtle shadow */
+    --link-color: #0056b3; /* A darker blue for links for readability */
+    --link-hover-color: #007BFF;
 }
 
 body {
@@ -29,7 +29,7 @@ header {
 }
 
 header h1 {
-    color: var(--text-color);
+    color: var(--primary-color); /* The requested blue color */
     margin-bottom: 15px;
     font-size: 3rem;
     font-weight: 700;
@@ -43,7 +43,7 @@ header p {
 }
 
 main {
-    max-width: 1400px; /* Wider layout */
+    max-width: 1400px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -61,11 +61,11 @@ main {
 
 .training-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--shadow-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .training-item h3 {
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-top: 0;
     font-size: 1.8rem;
     font-weight: 600;
@@ -77,16 +77,15 @@ main {
     font-size: 1rem;
 }
 
-.description a {
+a {
     color: var(--link-color);
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px solid transparent;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.description a:hover {
-    border-bottom-color: var(--link-hover-color);
+a:hover {
+    color: var(--link-hover-color);
 }
 
 video {
@@ -110,17 +109,6 @@ video {
 
 .documents li {
     margin-bottom: 10px;
-}
-
-.documents a {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.documents a:hover {
-    color: var(--link-hover-color);
 }
 
 footer {
