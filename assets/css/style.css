@@ -59,16 +59,17 @@ main {
     margin-top: 0;
     font-size: 1.75rem;
 }
-.training-item a {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
 
 .description {
     margin-bottom: 25px;
     color: var(--secondary-text-color);
+}
+
+.description a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 video {
